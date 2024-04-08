@@ -27,3 +27,22 @@ After getting the analog reading from the ADC we need to convert the
 According to the datasheet each gas has a distinct power function.
 
 ![image](https://github.com/Iann-urus/flag-torch/assets/67041860/43077666-6915-4626-a44f-1360fffdc962)
+
+## Calibrating the sensors
+To calibrate the sensor we need to find the ppm coefficients for each gas.
+
+## MQ-5
+![image](https://github.com/Iann-urus/flag-torch/assets/67041860/e282ac4f-73f6-469c-a922-67d014849953)
+
+After plotting the points for the graph based on the datasheet , we use polynomial regression because it is a non-linear graph to estimate a line of best fit.
+The resulting equation we'll get we'll be in the form 
+> y = ax + b
+> where y = RO/RS and
+>       x = ppm
+>
+> Hence RO/RS = a*ppm + b
+
+![image](https://github.com/Iann-urus/flag-torch/assets/67041860/47ac0a66-8a9d-440b-8e9b-65e6789fde24)
+
+
+
